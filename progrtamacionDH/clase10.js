@@ -16,12 +16,9 @@ let animadas = ["toy story", "finding nemo", "kungfu panda", "wally", "fortnite"
     mayuscula(array1)
     mayuscula(array2)
         let game = array2.pop() 
-        let x = array1.length
-    for (let i = 0; i < x ; i++) {
-        let aux = array1.pop() 
-        array2.push(aux)
+    for (let i = 0; i < array1.length ; i++) {
+        array2.push(array1[i])
     }
-
     return array2  
 }  
 
