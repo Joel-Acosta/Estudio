@@ -9,8 +9,11 @@ let animadas = ["toy story", "finding nemo", "kungfu panda", "wally", "fortnite"
     for (let i = 0; i < array.length; i++){
         array[i] = array[i].toUpperCase()
         
-    }
+    }return array
 }
+
+
+/* console.log(mayuscula(peliculas)); */
 
  function merge (array1, array2) {
     mayuscula(array1)

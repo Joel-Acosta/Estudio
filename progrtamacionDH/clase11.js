@@ -65,6 +65,7 @@ let banco = {
   },
   deposito: function (titular, cant) {
     let cliente = this.consultarCliente(titular);
+    console.log(cliente);
     cliente.saldoEnPesos += cant;
     console.log(
       `Depósito realizado, su nuevo saldo es: ${cliente.saldoEnPesos}`
@@ -84,7 +85,7 @@ let banco = {
   }
 };
 
-
+banco.deposito("Jacki Shurmer", 10000)
 
 /* 
 ---------Propiedad única

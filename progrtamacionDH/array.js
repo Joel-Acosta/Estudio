@@ -68,3 +68,25 @@ function inserción(myArray){
   }
   const listOfNumbers = [1, 6, 3, 4, 5]
   console.log(selectionSort(listOfNumbers)) //[1,3,4,5,6]
+
+
+  //--------------------------------------------------------------------------------------------------------------------------------
+/*   Supose we have a sorted array and we want to find the index  of a particular value in the array,
+ if it exists. what is the time complexity of the following algorithm ? */
+
+
+/*  function selection(array, n){
+  let low = 0
+  let high = n -1
+  while (low <= high) do {
+    const mid = (low + high)/ 2
+
+    if (array[mid] == value){
+      return mid
+    }else if (array[mid] < value){
+      low = mid + 1
+      }else if(arra[mid] > value){
+        high = mid - 1
+      }return -1
+    }
+} */ //incomplet
