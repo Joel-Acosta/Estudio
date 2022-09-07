@@ -49,6 +49,28 @@ let array = [ { nombre: "Lean", edad: 27 }, { nombre: "Eze", edad: 49} ]
   return nuevoArray
   }
 
-console.log(propiedadUnica (array, "nombre"))
+/* console.log(propiedadUnica (array, "nombre"))
+ */
+let num1 = 43
+let num2 = 78
+let num3 = 14
+let buscador = null
+let resultado = null
+
+if(num1 >= num2){
+  buscador = num1
+}else{
+  buscador = num2
+}
+
+if(buscador >= num3){
+  resultado = buscador
+
+}else{
+  resultado = num3
+
+}
+
+console.log(resultado);
 
 

@@ -67,26 +67,71 @@ function inserción(myArray){
     return list
   }
   const listOfNumbers = [1, 6, 3, 4, 5]
-  console.log(selectionSort(listOfNumbers)) //[1,3,4,5,6]
+  
 
 
-  //--------------------------------------------------------------------------------------------------------------------------------
-/*   Supose we have a sorted array and we want to find the index  of a particular value in the array,
- if it exists. what is the time complexity of the following algorithm ? */
+//--------------------------------------------------------------------------------------------------------------------------------
 
+// binary search function ----------------------------------------------------------------
 
-/*  function selection(array, n){
-  let low = 0
-  let high = n -1
-  while (low <= high) do {
-    const mid = (low + high)/ 2
-
-    if (array[mid] == value){
-      return mid
-    }else if (array[mid] < value){
-      low = mid + 1
-      }else if(arra[mid] > value){
-        high = mid - 1
-      }return -1
+function bySearch(array, target) {
+  let first = 0;
+  let last = array.length - 1;
+  while (first <= last) {
+    let midPoint = Math.floor((first + last) / 2);
+    if (array[midPoint] == target) {
+      return midPoint;
+    } else if (array[midPoint] < target) {
+      first = midPoint + 1;
+    } else {
+      last = midPoint - 1;
     }
-} */ //incomplet
+  }
+  return -1;
+}
+
+// recursive binary search function -----------
+
+function bySearchRecursive(array, target) {
+  if (array.length === 0) {
+    return false;
+  } else {
+    let midpoint = Math.floor(array.length / 2);
+    if (array[midpoint] == target) {
+      return true;
+    } else {
+      if (array[midpoint] < target) {
+        return bySearchRecursive(array.slice(midpoint + 1), target);
+      } else {
+        return bySearchRecursive(array.slice(0, midpoint), target);
+      }
+    }
+  }
+}
+
+//merge sort---------------------------------
+
+function merge(left, right) {
+  let sortedArr = [] // the sorted items will go here
+  while (left.length && right.length) {
+    // Insert the smallest item into sortedArr
+    if (left[0] < right[0]) {
+      sortedArr.push(left.shift())
+    } else {
+      sortedArr.push(right.shift())
+    }
+  }
+  // Use spread operators to create a new array, combining the three arrays
+  return [...sortedArr, ...left, ...right]
+}
+
+function mergeSort(arr) {
+  // Base case
+  if (arr.length <= 1) return arr
+  let mid = Math.floor(arr.length / 2)
+  // Recursive calls
+  let left = mergeSort(arr.slice(0, mid))
+  let right = mergeSort(arr.slice(mid))
+  return merge(left, right)
+}
+console.log(mergeSort([3, 5, 8, 5, 99, 1])) // [1, 3, 5, 5, 8, 99]

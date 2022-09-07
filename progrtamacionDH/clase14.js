@@ -75,6 +75,7 @@ Luego, realizar una función que reciba por parámetro el array y
 
 
 
+
  function precio(array, num){
     let final = []
     for (let i = 0; i < array.length; i++) {
@@ -93,7 +94,82 @@ Luego, realizar una función que reciba por parámetro el array y
 }
 
 /* console.log(precio(array, 199));
-console.log(precio(array, 200)); */
+console.log(precio(array, 200));
 
-const edades = [11, 12, 15, 18, 25, 22, 10, 33, 18, 5];
+const edades = [11, 12, 15, 18, 25, 22, 10, 33, 18, 5]; */
+
+function mergeSort(array) {
+  /**Sorts an array in ascending order
+   * returns a new sortred array
+   * divide : find the midpoint of the array and divide into subarrays
+   * Conquer : recursively sort the subarrrays created in previous step
+   * combine : merge the sorted subarrrays created in previous step
+   */
+
+  if(array.length < 2) {
+    return array;
+  }
+  let leftHalf = splitL(array);
+  let rightHalf = splitR(array);
+  let left = mergeSort(leftHalf);
+  let right = mergeSort(rightHalf);
+
+  return merge(left, right);
+
+  function splitL(array) {
+    /**Divide the unsorted array at midpoint into subarrays
+     * return two subarrays - left and right
+     */
+    let midpoint = Math.floor(array.length / 2);
+    let left = array.slice(0, midpoint);
+
+    return left;
+  }
+  function splitR(array) {
+    /**Divide the unsorted array at midpoint into subarrays
+     * return two subarrays - left and right
+     */
+    let midpoint = Math.floor(array.length / 2);
+    let right = array.slice(midpoint, array.length);
+
+    return right;
+  }
+
+  function merge(left, right) {
+    /**
+     *merges two arrays ,sorting them in the process
+     *Returns a new merged array
+     */
+
+    let list = [];
+    let i = 0;
+    let j = 0;
+    while (i < left.length && j < right.length) {
+      if (left[i] < right[j]) {
+        list.push(left[i]);
+        i+= 1;
+      } else {
+        list.push(right[j]);
+        j+=1;
+      }
+      while (i < left.length) {
+        list.push(left[i]);
+        i+=1;
+      }
+      while (j < right.length) {
+        list.push(right[j]);
+        j+=1;
+      }
+    }
+    return list;
+  }
+}
+
+
+let newArray = [12, 61, 42, 64, 22, 24, 92, 84];
+console.log(mergeSort(newArray));
+
+
+
+
 
