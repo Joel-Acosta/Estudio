@@ -1,76 +1,50 @@
-/* ejemplo let array = [{propiedad: valor},{propiedad:valor},{propiedad:valor}]
+//Ej 1
 
-let obj3 = array[2]
-let obj3Valor = array[2].propieda 
+let paises = [
+  {
+    nombre: "Argentina",
+    continente: "Sudamérica",
+    poblacion: 40000000
+  },
+{
+    nombre: "Colombia",
+    continente: "Sudamérica",
+    poblacion: 50372000
+  },
+
+  {
+    nombre: "Brasil",
+    continente: "Sudamérica",
+    poblacion: 300000000
+  },
+  {
+    nombre: "Etiopía",
+    continente: "África",
+    poblacion: 15000000
+  },
+  {
+    nombre: "Chile",
+    continente: "Sudamérica",
+    poblacion: 10000000
+  }
+];
 
 
-function buscarPorId(array3,id){
-    let a =[]
-    for (let i=0; i < array3.length; i++){
-        if(array3[i].id === id){
-            a.push(array3[i])
-        }
+
+function demo(array, string, number) {
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].continente === string && array[i].poblacion >= number) {
+      newArr.push(array[i]);
     }
-    
-    if (a === 0) {
-            return null} else {
-         return a
-            }
-    
-}
-
-console.log (buscarPorId(arrayCuentas, 1)) */
-
-/* Propiedad única
-Crear una función llamada propiedadUnica que reciba un arreglo de objetos como
-parámetro y un string. 
-Esta deberá retornar un nuevo arreglo de objetos, teniendo como
-parámetro la propiedad que fue pasada como string.
-Ejemplo:
-let array = [ { nombre: “Lean”, edad: 27 }, { nombre: “Eze”, edad: 49} ]
-propiedadUnica(array, “edad”) debe retornar [ { edad: 27 }, { edad: 49 } ]
-propiedadUnica(array, “nombre”) debe retornar [ { nombre: “Lean”}, { nombre: “Eze” } ]*/
-
-let array = [ { nombre: "Lean", edad: 27 }, { nombre: "Eze", edad: 49} ]
-
-
-  function propiedadUnica (arrayObjetos, str){
-
-  let nuevoArray = []
-  
-  for (let i=0; i < arrayObjetos.length; i++){
-      console.log(i);
-      let obj = {}
-    obj[str] = arrayObjetos[i][str]
-    nuevoArray.push(obj)
- 
   }
-
-  return nuevoArray
-  }
-
-/* console.log(propiedadUnica (array, "nombre"))
- */
-let num1 = 43
-let num2 = 78
-let num3 = 14
-let buscador = null
-let resultado = null
-
-if(num1 >= num2){
-  buscador = num1
-}else{
-  buscador = num2
+  return newArr;
 }
-
-if(buscador >= num3){
-  resultado = buscador
-
-}else{
-  resultado = num3
-
-}
-
-console.log(resultado);
+//console.log(demo(paises, 'Sudamérica', 20000000));
 
 
+//Ej2
+
+let arrayDeNumeros = [1,2,3, 8, 9, 104, 5, 6, 7, 15];
+
+function bubble

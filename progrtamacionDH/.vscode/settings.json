@@ -1,3 +1,8 @@
 {
-    "terminal.integrated.defaultLocation": "view"
+    "terminal.integrated.defaultLocation": "view",
+    "launch": {
+    
+        "configurations": [],
+        "compounds": []
+    }
 }
