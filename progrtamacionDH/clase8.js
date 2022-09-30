@@ -61,9 +61,7 @@ function fibonacci (num) {
     let anterior = 1
     let actual = 1
     let aux = 0
-    console.log(aux)
-    console.log(actual)
-
+ 
     while (actual <= num){
         aux = actual
         actual = actual + anterior
